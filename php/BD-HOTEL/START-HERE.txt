@@ -1,0 +1,110 @@
+╔══════════════════════════════════════════════════════════════════╗
+║                    BD  HOTEL  ·  QUICK  START                    ║
+╚══════════════════════════════════════════════════════════════════╝
+
+┌─────────────────────────────────────────────────────────────────┐
+│  🚀  EASIEST WAY  ·  auto-installer                             │
+└─────────────────────────────────────────────────────────────────┘
+
+ Windows  →  double-click     install-windows.bat
+ Mac/Linux → open Terminal → run:
+             chmod +x install-mac-linux.sh
+             ./install-mac-linux.sh
+
+ The installer copies files into XAMPP's htdocs and imports the
+ database automatically.  Then just:
+
+   1. Start Apache + MySQL in XAMPP Control Panel (both green)
+   2. Open  http://localhost/BD-HOTEL/check.php
+      (This is a diagnostic page. Every check should be green.)
+   3. Open  http://localhost/BD-HOTEL/
+      → the site!
+
+════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│  🛠   MANUAL WAY  ·  four steps                                  │
+└─────────────────────────────────────────────────────────────────┘
+
+STEP 1  ·  Copy this entire "BD-HOTEL" folder into XAMPP's htdocs.
+
+   Windows : C:\xampp\htdocs\BD-HOTEL\
+   macOS   : /Applications/XAMPP/htdocs/BD-HOTEL/
+   Linux   : /opt/lampp/htdocs/BD-HOTEL/
+
+   The final file  htdocs/BD-HOTEL/index.php  MUST exist.
+   DO NOT put it in  htdocs/BD-HOTEL/BD-HOTEL/  !
+
+STEP 2  ·  Start Apache + MySQL in XAMPP Control Panel.
+           Both should show green "Running" indicators.
+
+STEP 3  ·  Import the database.
+           a) Open  http://localhost/phpmyadmin
+           b) Click "Import" at the top
+           c) Choose file: BD-HOTEL/database/bdhotel.sql
+           d) Click "Go" at the bottom
+           You'll see "Import has been successfully finished."
+
+STEP 4  ·  Open the site.
+           http://localhost/BD-HOTEL/
+
+════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│  🔐  DEFAULT LOGIN                                              │
+└─────────────────────────────────────────────────────────────────┘
+
+  Admin URL   :  http://localhost/BD-HOTEL/admin/login.php
+  Admin email :  admin@bdhotel.com
+  Admin pass  :  Admin@123
+
+════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│  🩺  BEFORE OPENING THE SITE                                    │
+└─────────────────────────────────────────────────────────────────┘
+
+  Always visit  http://localhost/BD-HOTEL/check.php  FIRST.
+  It checks:  PHP version, required extensions, all files,
+              MySQL connection, seed data.
+  If every row is GREEN, the site is 100% ready.
+  If any row is RED, the page tells you exactly how to fix it.
+
+  Delete check.php once you go live (it exposes server info).
+
+════════════════════════════════════════════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────┐
+│  🐛  COMMON PROBLEMS                                             │
+└─────────────────────────────────────────────────────────────────┘
+
+  "Not Found — The requested URL /BD-HOTEL/ was not found"
+     → The BD-HOTEL folder is NOT inside htdocs.
+     → In File Explorer, verify this file exists:
+         C:\xampp\htdocs\BD-HOTEL\index.php
+       If it's at  C:\xampp\htdocs\BD-HOTEL\BD-HOTEL\index.php
+       (nested)  →  move the inner folder up one level.
+       If it's named  BD-HOTEL-main  (from GitHub download)
+                    → rename to  BD-HOTEL
+
+  Apache won't start on Windows (port 80 conflict with Skype/IIS)
+     → XAMPP → Config → httpd.conf
+       Change  "Listen 80"  to  "Listen 8080"
+       Then use  http://localhost:8080/BD-HOTEL/
+
+  "Database connection failed"
+     → MySQL not started, or you set a MySQL root password.
+     → Edit  database/db_connect.php  and put your password in DB_PASS.
+
+  Page loads but no CSS / no images
+     → You have the folder in the wrong place.
+     → Visit  http://localhost/BD-HOTEL/check.php  first;
+       it will tell you exactly what's wrong.
+
+  Everything looks blue / broken
+     → Same as above. Visit check.php.
+
+════════════════════════════════════════════════════════════════════
+
+Full documentation:  README.md
+Enjoy!  — BD Hotel

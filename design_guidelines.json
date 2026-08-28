@@ -1,0 +1,129 @@
+{
+  "project_name": "BD HOTEL",
+  "theme": "light",
+  "design_archetype": "Luxury / Editorial (Old Money Tech)",
+  "typography": {
+    "headings": {
+      "font": "Cormorant Garamond",
+      "styles": "font-serif, tracking-tight, leading-none. Use font-light (300) or font-medium (500) for a premium, non-shouty feel. NEVER use bold (700+) for large serif headings."
+    },
+    "body": {
+      "font": "Manrope",
+      "styles": "font-sans, tracking-normal, leading-relaxed. Use text-slate-600 or #212529 for high legibility."
+    },
+    "scale_rules": {
+      "h1": "text-5xl md:text-6xl lg:text-7xl",
+      "h2": "text-3xl md:text-4xl lg:text-5xl",
+      "h3": "text-xl md:text-2xl",
+      "body": "text-base",
+      "labels": "text-xs tracking-[0.2em] uppercase font-semibold text-slate-500"
+    }
+  },
+  "colors": {
+    "palette": {
+      "primary": "#0D6EFD",
+      "secondary": "#FFC107",
+      "dark": "#212529",
+      "white": "#FFFFFF",
+      "background": "#F8F9FA",
+      "luxury_accent": "#C5A059"
+    },
+    "usage_rules": {
+      "primary_0D6EFD": "CRITICAL: To avoid the 'cheap tech' look, restrict this bright blue strictly to active states in the Admin Dashboard, checkboxes, and the primary 'Confirm Booking' button. DO NOT use as large background sections.",
+      "secondary_FFC107": "Use exclusively for review Star Ratings, tiny UI highlight dots, and 'Special Offer' tags.",
+      "dark_212529": "Use as the primary text color and for the Footer background. It grounds the design.",
+      "luxury_accent_C5A059": "Added for editorial elegance. Use for subtle borders, decorative thin lines (hr), and delicate hover underlines on navigation."
+    }
+  },
+  "visual_enhancers": {
+    "surfaces": {
+      "glassmorphism": "backdrop-blur-xl bg-white/70 border border-white/40 shadow-[0_8px_32px_rgba(0,0,0,0.04)]. Use for sticky nav and the booking widget overlay.",
+      "cards": "Solid white (#FFFFFF) backgrounds with extremely subtle shadows: shadow-sm or shadow-[0_20px_40px_rgba(0,0,0,0.03)].",
+      "admin_cards": "Flat white, 1px subtle border (border-slate-200), no heavy shadows."
+    },
+    "corners": "Use rounded-none or rounded-sm for a sharp, editorial print-magazine feel on marketing pages. Use rounded-lg for Admin Dashboard cards.",
+    "borders": "Delicate 1px borders (border-slate-200 or border-dark/10) to define structure without visual weight."
+  },
+  "layout": {
+    "spacing": "Extremely generous. Sections must have py-24 or py-32. Elements within sections gap-8 to gap-16.",
+    "grids": {
+      "featured_rooms": "Bento Grid Mode A (Tetris Grid). Make the first room col-span-full md:col-span-8 row-span-2, others smaller. Avoid boring equal squares.",
+      "gallery": "Masonry layout or staggered grid (columns moving at different speeds on scroll).",
+      "admin_dashboard": "High Density Grid Mode B. Tight gaps (gap-4 or gap-6), strict alignment."
+    }
+  },
+  "components": {
+    "navigation": "Sticky top, crystal glassmorphism. Logo left, links center, 'Book Now' pill button right. Must have data-testid='nav-book-button'.",
+    "hero": "Full-screen (min-h-screen) with a high-res image. Max overlay opacity: bg-black/40. Massive H1 heading. NEVER center-align everything; try left-aligned text with an offset booking widget.",
+    "booking_widget": "Floating over the bottom edge of the hero. Horizontal layout on desktop (Check-in, Check-out, Guests, Button) in one row.",
+    "room_cards": "Image on top (max-h-64 object-cover), details below. Left-aligned text. Minimalist amenities icons. 'Book' button as a text link with an arrow (->) rather than a solid block.",
+    "admin_sidebar": "Dark theme (#212529) sidebar, light icons. Main content area #F8F9FA.",
+    "auth_forms": "Split screen: left side beautiful hotel image, right side clean, minimalist login/register form using Shadcn inputs."
+  },
+  "motion": {
+    "libraries": "framer-motion for interactions, lenis for smooth scrolling.",
+    "scroll": "Parallax on the hero image. Staggered fade-up (y: 20, opacity: 0) for section contents.",
+    "hover": "Images in cards scale up slightly (scale-105) with long duration (duration-700). Buttons use elegant translate or color sweep.",
+    "marquee": "Use react-fast-marquee for a slow 'Editorial Ribbon' of amenities (e.g., 'SPA \u2022 FINE DINING \u2022 CONCIERGE') across the screen in large serif outline text."
+  },
+  "media": {
+    "hero_images": [
+      {
+        "url": "https://images.pexels.com/photos/29602700/pexels-photo-29602700.jpeg",
+        "description": "Twilight architectural view of a luxury hotel facade. Primary hero background."
+      }
+    ],
+    "room_images": [
+      {
+        "url": "https://images.unsplash.com/photo-1731336478850-6bce7235e320",
+        "description": "Presidential Suite / Luxury Bedroom"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1629140727571-9b5c6f6267b4",
+        "description": "Executive / Deluxe Room"
+      }
+    ],
+    "gallery_images": [
+      {
+        "url": "https://images.pexels.com/photos/460537/pexels-photo-460537.jpeg",
+        "description": "Fine Dining Restaurant / Coastal View"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwyfHxyZXNvcnQlMjBmaW5lJTIwZGluaW5nJTIwc3BhfGVufDB8fHx8MTc4MjEwODEzN3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Resort Lounge and Poolside"
+      },
+      {
+        "url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1ODB8MHwxfHNlYXJjaHwxfHxyZXNvcnQlMjBmaW5lJTIwZGluaW5nJTIwc3BhfGVufDB8fHx8MTc4MjEwODEzN3ww&ixlib=rb-4.1.0&q=85",
+        "description": "Spa and Wellness Pool"
+      }
+    ],
+    "icons": "Use @phosphor-icons/react with weight=\"light\" or weight=\"thin\" for a premium delicate look."
+  },
+  "testing": {
+    "attributes": "All interactive and key informational elements MUST include a data-testid attribute (e.g., data-testid='hero-book-button', data-testid='login-submit')."
+  },
+  "instructions_to_main_agent": [
+    "Install required fonts from Google Fonts: Cormorant Garamond and Manrope.",
+    "Install libraries: framer-motion, @phosphor-icons/react, react-fast-marquee, lucide-react.",
+    "Do NOT use standard HTML <input type='date'>. Use Shadcn UI DatePicker (Calendar + Popover) for the booking widget.",
+    "Ensure high contrast for text over images by using a maximum bg-black/40 overlay or subtle text-shadows.",
+    "Implement Lenis for smooth scrolling globally.",
+    "For the Admin panel, use Recharts for the statistics dashboard."
+  ],
+  "UNIVERSAL_GUIDELINES_FOR_MAIN_AGENT": [
+    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur).",
+    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
+    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text.",
+    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
+    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
+    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
+    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
+    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
+    "Prioritize using pre-existing components from src/components/ui when applicable.",
+    "Use sonner for toasts. Sonner component are located in /app/src/components/ui/sonner.tsx"
+  ]
+}

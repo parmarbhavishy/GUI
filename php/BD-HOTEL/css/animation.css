@@ -1,0 +1,41 @@
+/* Animations */
+
+@keyframes spin      { to { transform:rotate(360deg); } }
+@keyframes fadeUp    { from { opacity:0; transform:translateY(24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes fadeDown  { from { opacity:0; transform:translateY(-24px); } to { opacity:1; transform:translateY(0); } }
+@keyframes zoomIn    { from { opacity:0; transform:scale(.9); } to { opacity:1; transform:scale(1); } }
+@keyframes flipLeft  { from { opacity:0; transform:perspective(600px) rotateY(-90deg); } to { opacity:1; transform:none; } }
+@keyframes flipRight { from { opacity:0; transform:perspective(600px) rotateY(90deg); }  to { opacity:1; transform:none; } }
+@keyframes slideL    { from { opacity:0; transform:translateX(-40px); } to { opacity:1; transform:none; } }
+@keyframes slideR    { from { opacity:0; transform:translateX(40px); }  to { opacity:1; transform:none; } }
+@keyframes bounceIn  { 0%{ opacity:0; transform:scale(.6);} 60%{ opacity:1; transform:scale(1.05);} 100%{ transform:scale(1);} }
+@keyframes marquee   { from { transform:translateX(0); } to { transform:translateX(-50%); } }
+@keyframes glow      { 0%,100%{ box-shadow:0 0 0 rgba(197,160,89,0); } 50%{ box-shadow:0 0 24px rgba(197,160,89,.5); } }
+@keyframes pulse     { 0%,100%{ transform:scale(1); } 50%{ transform:scale(1.05); } }
+
+.fade-up{ animation:fadeUp .8s ease both; }
+.fade-down{ animation:fadeDown .8s ease both; }
+.zoom-in{ animation:zoomIn .8s ease both; }
+.flip-left{ animation:flipLeft .8s ease both; }
+.flip-right{ animation:flipRight .8s ease both; }
+.slide-l{ animation:slideL .8s ease both; }
+.slide-r{ animation:slideR .8s ease both; }
+.bounce-in{ animation:bounceIn .9s ease both; }
+.glow{ animation:glow 2.4s ease-in-out infinite; }
+.pulse{ animation:pulse 2s ease-in-out infinite; }
+
+/* Hover lifts */
+.hover-lift{ transition:transform .35s ease, box-shadow .35s ease; }
+.hover-lift:hover{ transform:translateY(-6px); box-shadow:0 24px 40px -22px rgba(0,0,0,.2); }
+
+/* Ripple */
+.ripple{ position:relative; overflow:hidden; }
+.ripple::after{
+  content:''; position:absolute; inset:0; background:rgba(255,255,255,.15);
+  transform:scale(0); border-radius:50%; transition:transform .6s ease, opacity .6s ease;
+  opacity:0;
+}
+.ripple:active::after{ transform:scale(2.5); opacity:1; transition:0s; }
+
+/* AOS overrides */
+[data-aos]{ transition-timing-function:cubic-bezier(.22,1,.36,1) !important; }

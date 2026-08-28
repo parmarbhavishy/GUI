@@ -1,0 +1,52 @@
+BD-HOTEL/
+├── admin/
+│   ├── _layout.php               (shared admin chrome)
+│   ├── _footer.php
+│   ├── dashboard.php             (stats + recent bookings)
+│   ├── login.php
+│   ├── logout.php
+│   ├── rooms.php                 (CRUD rooms)
+│   ├── bookings.php              (list + status update)
+│   ├── customers.php             (list users)
+│   ├── gallery.php               (bulk add + delete)
+│   ├── messages.php              (contact messages)
+│   ├── reviews.php               (approve / delete)
+│   └── settings.php              (admin profile + password)
+├── database/
+│   ├── bdhotel.sql               (schema + seed data)
+│   └── db_connect.php            (PDO connection)
+├── includes/
+│   ├── config.php                (session, CSRF, auth, helpers)
+│   ├── header.php                (fonts, Bootstrap, AOS, Swiper)
+│   ├── navbar.php                (sticky glass nav)
+│   └── footer.php                (dark editorial footer + newsletter)
+├── css/
+│   ├── style.css                 (luxury theme)
+│   ├── animation.css             (keyframes + AOS overrides)
+│   └── responsive.css            (mobile / tablet breakpoints)
+├── js/
+│   ├── script.js                 (nav, counters, toasts, gallery)
+│   ├── swiper.js                 (sliders)
+│   └── validation.js             (client-side validation)
+├── images/                       (custom hotel images)
+├── uploads/                      (admin uploaded files)
+├── index.php                     (home)
+├── rooms.php                     (list + detail via ?id=)
+├── booking.php                   (POST handler)
+├── invoice.php                   (confirmation + print)
+├── gallery.php                   (masonry + lightbox)
+├── about.php
+├── services.php
+├── contact.php                   (form + newsletter subscribe)
+├── login.php
+├── register.php
+├── logout.php
+├── forgot-password.php           (email-token reset)
+├── reset-password.php
+├── profile.php                   (bookings, cancel, review, change pw)
+├── check.php                     (setup diagnostic - delete before deploy)
+├── install-windows.bat           (one-click Windows installer)
+├── install-mac-linux.sh          (one-click Mac/Linux installer)
+├── .htaccess                     (Apache config)
+├── START-HERE.txt                (quick-start guide)
+└── README.md                     (full docs)

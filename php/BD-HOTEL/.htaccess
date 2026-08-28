@@ -1,0 +1,17 @@
+# BD Hotel Apache config
+
+# 1) Serve index.php by default when hitting /BD-HOTEL/
+DirectoryIndex index.php index.html
+
+# 2) Small performance & UX tweaks
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+</IfModule>
+
+# 3) Protect sensitive files from being served directly
+<FilesMatch "\.(sql|md|log)$">
+  Require all denied
+</FilesMatch>
+
+# 4) 404 → home
+ErrorDocument 404 /BD-HOTEL/index.php
